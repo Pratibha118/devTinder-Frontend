@@ -1,23 +1,22 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom"
-import Navbar from "./components/Navbar"
-
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Body from "./components/Body";
+import Profile from "./components/Profile";
+import Login from "./components/Login";
 
 function App() {
-
   return (
     <>
       <BrowserRouter basename="/">
-      <Routes>
-        <Route path="/" element={<div>base path</div>} />
-        <Route path="/login" element={<div>login path</div>} />
-        <Route path="/hello" element={<div>hello path</div>} />
-
-      </Routes>
+        <Routes>
+          <Route path="/" element={<Body />}>
+            <Route path="/login" element={<Login />} />
+            <Route path="/profile" element={<Profile />} />
+          </Route>
+        </Routes>
       </BrowserRouter>
-      <Navbar />
-      <h1 className="text-3xl font-bold underline" >Hello World</h1>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
