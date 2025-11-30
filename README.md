@@ -18,3 +18,5 @@
 -Create configureStore, provide your store in Provider, createSlice then add reducer to the store.
 -Dispatch adduser action after successful login
 -Navbar should update once user is login
+-Other routes should not be accessible without login
+-If token is not present, redirect user to login page.
