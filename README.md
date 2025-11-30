@@ -10,3 +10,11 @@
 -Created basic routes in app.jsx
 -Created Body component and added it in "/" default route.
 -Created children of Body Component and called Navbar,Outlet and Footer in it.
+-Crate a Login page
+-Install axios 
+-CORS -install cors in backend => add middleware to with {configurations: origin, credentials: true}
+-Whenever you are making API call so pass => withCredentials: true
+-Install Reduxtoolkit and react redux
+-Create configureStore, provide your store in Provider, createSlice then add reducer to the store.
+-Dispatch adduser action after successful login
+-Navbar should update once user is login
