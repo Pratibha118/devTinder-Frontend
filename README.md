@@ -20,3 +20,6 @@
 -Navbar should update once user is login
 -Other routes should not be accessible without login
 -If token is not present, redirect user to login page.
+-Logout feature
+-Get the feed nd add feed data in store
+-Build the user card

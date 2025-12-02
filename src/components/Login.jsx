@@ -13,7 +13,6 @@ const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const loggedInUser = useSelector((store) => store?.user);
-  console.log(loggedInUser);
 
   // const newData = {
   //   emailId: email,
@@ -48,7 +47,6 @@ const Login = () => {
       return navigate("/");
     } catch (err) {
       setErrorMessage(err?.response?.data)
-      console.log(err);
     }
   };
 
