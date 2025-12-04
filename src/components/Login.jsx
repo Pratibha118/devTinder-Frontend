@@ -8,11 +8,11 @@ import { BASE_URL } from "../utils/constants";
 const Login = () => {
   const [emailId, setEmailId] = useState("tanya@gmail.com");
   const [password, setPassword] = useState("Tanya@123");
+  const [errorMessage, setErrorMessage] = useState();
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const loggedInUser = useSelector(store => store?.user)
-  console.log(loggedInUser)
+  const loggedInUser = useSelector((store) => store?.user);
 
   // const newData = {
   //   emailId: email,
@@ -34,7 +34,7 @@ const Login = () => {
     //   }
     try {
       const res = await axios.post(
-        BASE_URL+"/login",
+        BASE_URL + "/login",
         {
           emailId,
           password,
@@ -43,10 +43,10 @@ const Login = () => {
           withCredentials: true,
         }
       );
-      dispatch(addUser(res.data))
-      return navigate('/')
+      dispatch(addUser(res.data));
+      return navigate("/");
     } catch (err) {
-      console.log(err.message);
+      setErrorMessage(err?.response?.data)
     }
   };
 
@@ -73,6 +73,8 @@ const Login = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
           </fieldset>
+
+          {errorMessage ? <p className="text-red-500">{errorMessage}</p> : <></>}
           <div className="card-actions justify-center my-4">
             <button className="btn btn-primary" onClick={handleLogin}>
               Submit
