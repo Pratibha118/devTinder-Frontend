@@ -22,4 +22,8 @@
 -If token is not present, redirect user to login page.
 -Logout feature
 -Get the feed nd add feed data in store
--Build the user card
+-Build the user card on feed
+-Edit profile feature
+-Show Toast msg on saving changes in profile
+-See all the connections
+-
