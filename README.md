@@ -27,3 +27,10 @@
 -Show Toast msg on saving changes in profile
 -See all the connections
 -Accept or reject connection requests
+-Send/Ignore the user from the feed.
+-SignUp form
+-E2E tesing
+
+
+
+
