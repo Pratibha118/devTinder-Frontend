@@ -9,12 +9,13 @@ const EditProfile = ({ user }) => {
   const [firstName, setFirstName] = useState(user.firstName);
   const [lastName, setLastName] = useState(user.lastName);
   const [age, setAge] = useState(user.age);
-  const [gender, setGender] = useState(user.gender);
+  const [gender, setGender] = useState(user.gender|| "");
   const [about, setAbout] = useState(user.about);
   const [imageURL, setImageURL] = useState(user.imageURL);
   const [errorMessage, setErrorMessage] = useState();
   const [showToast, setShowToast] = useState(false);
   const dispatch = useDispatch();
+  console.log(age, gender)
 
   const saveProfile = async () => {
     //clear error
@@ -45,6 +46,7 @@ const EditProfile = ({ user }) => {
   };
 
   const handleAge = (value) => {
+    console.log('value',value)
     if (value > 17) {
       setAge(value);
       setErrorMessage("");
@@ -154,6 +156,7 @@ const EditProfile = ({ user }) => {
 
         <UserCard
           user={{ firstName, lastName, imageURL, age, gender, about }}
+          showBtn={false}
         />
       </div>
       {showToast ? (

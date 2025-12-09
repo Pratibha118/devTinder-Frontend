@@ -21,10 +21,10 @@ const Connections = () => {
   useEffect(() => {
     fetchConnections();
   }, []);
-
-  if (!connections) return null;
+console.log(connections)
+  if (!connections) return ;
   if (connections.length === 0)
-    return <h1 className="text-bold text-2xl">No connections found</h1>;
+    return <h1 className="text-bold text-center text-white text-2xl m-4">No connections found</h1>;
   return (
     <div className="text-center my-10">
       <h1 className="text-bold text-white text-3xl">Connections</h1>
