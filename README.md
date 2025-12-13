@@ -89,6 +89,7 @@ npm -v # Should print "11.6.2"."$
     Backend = devTinder.com/api
 
     nginx config- 
+    server - 56.228.80.5;
     location /api/ {
         proxy_pass http://localhost:3000/;   # NOTICE: ends with slash
         proxy_set_header Host $host;
@@ -96,6 +97,21 @@ npm -v # Should print "11.6.2"."$
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header X-Forwarded-Proto $scheme;
     }
+
+# Sending email via SES
+ 
+  - Create an IAM user
+  - Give Access to AmazonSESFullAccess
+  - Amazon SES: create an identity
+  - Verify your email or domain name
+  - Install AWS sdk - v3
+  - code sample https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/ses-examples-sending-email.html
+  - Setup SES client
+  - Access credentials should be created in IAM under securityCredentials tab
+  - Add the credentials to the env file
+  - Write code for SESClient
+  - Write code for Sending email address
+  - Make the email dynamic by passing more params.
 
 
 
